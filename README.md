@@ -3,4 +3,4 @@
 
 pip install -r requirements.txt
 
-when if you want to install all the libraries
+when if you want to install all the libraries.
