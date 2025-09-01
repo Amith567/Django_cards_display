@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>datashow</title>
+  <!-- Flowbite CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@latest/dist/flowbite.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+<!-- Header -->
+<p class="text-3xl font-bold uppercase text-center my-6">
+    Cards
+</p>
+
+<!-- Cards container -->
+<div class="flex flex-wrap gap-6 p-6 justify-center">
+  {% for data in datas %}
+  <div class="w-64 h-80 bg-white border rounded-lg shadow-md overflow-hidden flex flex-col">
+      
+      <!-- Image -->
+      <a href="#">
+          <img class="h-36 w-full object-cover rounded-t-lg" src="{{ data.img.url }}" alt="{{ data.name }}">
+      </a>
+      
+      <!-- Content -->
+      <div class="flex-1 px-3 py-2 flex flex-col">
+          <!-- Name (space from image) -->
+          <h5 class="text-lg font-bold text-black mt-2 truncate">{{ data.name }}</h5>
+          
+          <!-- Description -->
+          <p class="mt-1 text-sm text-gray-700 overflow-hidden text-ellipsis" 
+             style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">
+              {{ data.des }}
+          </p>
+      </div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- Flowbite JS -->
+<script src="https://unpkg.com/flowbite@latest/dist/flowbite.bundle.js"></script>
+</body>
+</html>

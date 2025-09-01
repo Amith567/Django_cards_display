@@ -1,0 +1,22 @@
+# Python cache and compiled files
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# Django database
+db.sqlite3
+
+# Media files (user uploads)
+media/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# IDE/Editor folders
+.vscode/
+.idea/
