@@ -19,11 +19,15 @@ from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from django.shortcuts import redirect
 
+def root_redirect(request):
+    return redirect('/datashow/')
 
 
 urlpatterns = [
-    path('',include('datashow.urls')),
+    path('',root_redirect),
+    path('datashow/',include('datashow.urls')),
     path('admin/', admin.site.urls),
 ]
 if settings.DEBUG:
